@@ -29,7 +29,6 @@
 
 ```text
 npm install
-
 ```
 
 ## Typescript to Javascript compilation
