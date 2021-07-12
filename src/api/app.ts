@@ -3,18 +3,17 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cors from "cors";
 import paginate from "express-paginate";
-import {notFound, errorHandler} from "./utils/middlewares";
+import {notFound, errorHandler} from "../utils/middlewares";
 import defaultRoutes from "./routes/default";
 import dotenv from "dotenv";
-
-// get configurations
-dotenv.config();
 
 // application instance creation
 const app = express();
 
 // middlewares
-app.use(morgan("dev"));
+if (process.env.NODE_ENV !== "test") {
+    app.use(morgan("dev"));
+}
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
