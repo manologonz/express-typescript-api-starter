@@ -4,10 +4,9 @@ import helmet from "helmet";
 import cors from "cors";
 import paginate from "express-paginate";
 import {notFound, errorHandler} from "../utils/middlewares";
-import defaultRoutes from "./routes/default";
-import dotenv from "dotenv";
+import AllRoutes from "./routes";
 
-// application instance creation
+// app instantiation
 const app = express();
 
 // middlewares
@@ -21,7 +20,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(paginate.middleware(10, 50));
 
 // routes
-app.use("/api", defaultRoutes);
+app.use("/api", AllRoutes);
 
 // error handling
 app.use(notFound);
