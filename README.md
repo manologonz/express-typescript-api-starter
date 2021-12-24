@@ -33,7 +33,9 @@
 * supertest (6.1.3)
 * ts-jest (27.0.3)
 * ts-node (10.0.0)
-* typescript (4.3.2) ## Environment Create an env (.env) file in the root folder with de following values:
+* typescript (4.3.2)
+## Environment
+Create an env (.env) file in the root folder with de following values:
 * **NODE_ENV** (required)
   * example: development
 * **PORT** (optional)
