@@ -42,12 +42,20 @@ Create an env (.env) file in the root folder with de following values:
 * **PORT** (optional)
   * example: 5000
   * default: 8080
-* **MONDBO_DBNAME** (optional)
-  * example: some_database
+* **MYSQL_PORT** (optional)
+  * example: 3306
+  * default: 3306
+* **MYSQL_HOST** (optional)
+  * example: localhost
+  * default: localhost
+* **MYSQL_USERNAME** (optional)
+  * example: my_user
+  * default: root
+* **MYSQL_PASSWORD** (required)
+  * exmaple: mypassword
+* **MYSQL_DATABASE** (optional)
+  * example: clients
   * default: mydb
-* **MONGODB_BASEURL** (optional)
-  * example: mongodb://localhost:123
-  * default: mongodb://localhost:2701
 
 ## Commands
 ### Setup
