@@ -46,7 +46,7 @@ Create an env (.env) file in the root folder with de following values:
   * default: mydb
 * **MONGODB_BASEURL** (optional)
   * example: mongodb://localhost:123
-  * default: mongodb://localhost:2701
+  * default: mongodb://localhost:27017
 
 ## Commands
 ### Setup
