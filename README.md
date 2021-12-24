@@ -1,49 +1,71 @@
 # Express Typescript API Starter
 
-## Packages
+## Node Version
+* Node (16.13.0)
+## Dependencies
 
-* bcryptjs
-* cors
-* dotenv
-* express
-* express-paginate
-* express-validator
-* helmet
-* jsonwebtoken
-* morgan
-* multer
-* uuid
+* bcryptjs (2.4.3)
+* cors (2.8.5)
+* dotenv (10.0.0)
+* express (4.17.1)
+* express-paginate (1.0.2)
+* express-validator (6.11.1)
+* helmet (4.6.0)
+* jsonwebtoken (8.5.1)
+* mongoose (6.1.3)
+* morgan (1.10.0)
+* multer (1.4.2)
+* uuid (8.3.2)
 
-## Dev Packages
+## Dev Dependencies
 
-* @types/cors
-* @types/express
-* @types/morgan
-* @types/express-paginate
-* @types/node
-* nodemo
-* ts-node
-* typescript
+* @types/bcryptjs (2.4.2),
+* @types/cors (2.8.10),
+* @types/express-paginate (1.0.0),
+* @types/jest (26.0.24)
+* @types/jsonwebtoken (8.5.1)
+* @types/morgan (1.9.2)
+* @types/node (15.6.1)
+* @types/supertest (2.0.11)
+* @types/uuid (8.3.0)
+* jest (27.0.6)
+* nodemon (2.0.7)
+* supertest (6.1.3)
+* ts-jest (27.0.3)
+* ts-node (10.0.0)
+* typescript (4.3.2) ## Environment Create an env (.env) file in the root folder with de following values:
+* **NODE_ENV** (required)
+  * example: development
+* **PORT** (optional)
+  * example: 5000
+  * default: 8080
+* **MONDBO_DBNAME** (optional)
+  * example: some_database
+  * default: mydb
+* **MONGODB_BASEURL** (optional)
+  * example: mongodb://localhost:123
+  * default: mongodb://localhost:2701
 
-## Setup
+## Commands
+### Setup
 
 ```text
 npm install
 ```
 
-## Typescript to Javascript compilation
+### Typescript to Javascript compilation
 
 ```text
 npm build
 ```
 
-## Development
+### Development
 
 ```text
 npm run dev
 ```
 
-## Production
+### Production
 
 ```text
 npm start
