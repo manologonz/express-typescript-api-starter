@@ -7,7 +7,7 @@ describe("GET /", function () {
         expect(response.statusCode).toBe(200);
         expect(response.body.detail).toBeDefined();
         expect(response.body.detail).toEqual(
-            "Welcome to the Node-Typescript API starter! :)"
+            "WelcomeEntity to the Node-Typescript API starter! :)"
         );
     });
 });

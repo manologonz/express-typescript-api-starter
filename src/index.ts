@@ -3,7 +3,7 @@ import app from "./api/app";
 import db from "./db";
 import {PORT} from "./utils/constants";
 
-db.connect()
+db.initialize()
     .then(() => {
         app.listen(PORT, () => {
             console.log("listening on: http://localhost:"+PORT);

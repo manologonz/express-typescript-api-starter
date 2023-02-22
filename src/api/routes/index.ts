@@ -1,8 +1,8 @@
 import {Router} from "express";
-import RDefault from "./default";
+import RWelcome from "./welcome";
 
 const router = Router();
 
-router.use(RDefault);
+router.use(RWelcome);
 
 export default router;

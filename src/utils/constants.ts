@@ -1,5 +1,7 @@
 import dotenv from "dotenv";
-import {ConnectionOptions} from "typeorm";
+import {DataSourceOptions} from "typeorm";
+import path from "path";
+
 dotenv.config();
 
 export const PORT = process.env.PORT || 8080;
@@ -14,7 +16,10 @@ export const MYSQL_PASSWORD = process.env.MYSQL_PASSWORD || "";
 
 export const MYSQL_DATABASE = process.env.MYSQL_DATABASE || "mydb";
 
-export const CONNECTION_CONFIGS: ConnectionOptions = {
+export const APP_DOMAIN = process.env.APP_DOMAIN || "localhost";
+
+const apiPath = path.join(__dirname, "..", "api");
+export const CONNECTION_CONFIGS: DataSourceOptions = {
     type: "mysql",
     host: MYSQL_HOST,
     port: MYSQL_PORT,
@@ -23,5 +28,7 @@ export const CONNECTION_CONFIGS: ConnectionOptions = {
     database: MYSQL_DATABASE,
     logging: true,
     synchronize: true,
-    entities: [],
+    entities: [
+        `${apiPath}/entities/**/*.entity.ts`
+    ],
 };

@@ -75,3 +75,7 @@ typings/
 
 # Build output
 dist/
+
+# Editor
+.idea
+.vscode
