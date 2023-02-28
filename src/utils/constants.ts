@@ -17,7 +17,10 @@ export const DB_DATABASE = process.env.DB_DATABASE || "api_starter";
 
 export const APP_DOMAIN = process.env.APP_DOMAIN || "localhost";
 
+export const JWT_SECRET = process.env.JWT_SECRET || "mysupersecret";
+
 const apiPath = path.join(__dirname, "..", "api");
+
 export const CONNECTION_CONFIGS: DataSourceOptions = {
     type: "postgres",
     host: DB_HOST,

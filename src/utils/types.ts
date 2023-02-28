@@ -1,17 +1,21 @@
 export class HttpError extends Error {
     statusCode: number;
     message: string;
+    validationErrors?: ValidationErrors;
 
-    constructor(message: string, statusCode: number) {
-        super(message);
-        this.message = message;
-        this.statusCode = statusCode;
+    constructor(params: {message: string, statusCode: number, validationErrors?: ValidationErrors}) {
+        super(params.message);
+        this.message = params.message;
+        this.statusCode = params.statusCode;
+        this.validationErrors = params.validationErrors;
     }
 }
 
 export type ErrorResponse = {
-    detail: string | object,
+    detail: string | object | ValidationErrors,
     stack?: string
 }
 
-export type Port = string | number;
+export type ValidationErrors = {
+    [field: string]: string[];
+}

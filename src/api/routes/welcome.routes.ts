@@ -1,8 +1,8 @@
 import express from "express";
 import {createWelcomeEntry, welcome} from "../controllers/welcome.controller";
-import {createWelcomeValidators} from "../validators/welcome";
+import {createWelcomeValidators} from "../validators/welcome.validator";
 
-const router: express.Router = express.Router();
+const router = express.Router();
 const prefix = "/welcome";
 
 router.get(prefix, welcome);

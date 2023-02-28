@@ -1,12 +1,13 @@
 import {Request, Response, NextFunction} from "express";
-import {validationResult} from "express-validator";
-import db from "../../db";
-import {Welcome} from "../entities/welcome.entity";
 import {APP_DOMAIN} from "../../utils/constants";
+import {checkValidationErrors} from "../../utils/helpers";
+import welcomeService from "../services/welcome.service";
+import {Welcome} from "../entities/welcome.entity";
+import db from "../../db";
+
 export async function welcome(req: Request, res: Response, next: NextFunction) {
     try {
-        const WelcomeRepository = db.getRepository(Welcome);
-        const config = await WelcomeRepository.findOneBy({});
+        const config = await welcomeService.repository.findOneBy({});
 
         type ResBody = {
             message: string,
@@ -38,19 +39,14 @@ export async function welcome(req: Request, res: Response, next: NextFunction) {
 
 export async function createWelcomeEntry(req: Request, res: Response, next: NextFunction) {
     try {
-        const WelcomeRepository = db.getRepository(Welcome);
-        const errors = validationResult(req);
+        checkValidationErrors(req);
 
-        if(!errors.isEmpty()) {
-            return res.status(400).json({errors: errors.array()});
-        }
-
-        let config = await WelcomeRepository.findOneBy({});
+        let config = await welcomeService.repository.findOneBy({});
         if(config === null) {
-            config = await WelcomeRepository.save({message: req.body.message});
+            config = await welcomeService.repository.save({message: req.body.message});
         } else {
             config.message = req.body.message;
-            config = await WelcomeRepository.save(config);
+            config = await welcomeService.repository.save(config);
         }
 
         return res.json({currentMessage: config.message});
